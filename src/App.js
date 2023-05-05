@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import Favourites from "./components/Favourites";
 import NotFoundPage from "./components/NotFoundPage";
 import Receipe from "./components/Receipe";
+import RececipeItem from "./components/ReceipeItem";
+import ReceipeItem from "./components/ReceipeItem";
 
 const App = () => {
   const [searchQuery, setsearchQuery] = useState("");
@@ -21,7 +23,7 @@ const App = () => {
     getData(searchQuery);
 
     setsearchQuery("");
-    inputField.current.value.blur();
+    inputField.current.blur();
     setRecipes([]);
   };
 
@@ -56,6 +58,7 @@ const App = () => {
           ></Route>
           <Route path="/recipe" element={<Home />}></Route>
           <Route path="/Favourites" element={<Favourites />}></Route>
+          <Route path="/recipe-item/:id" element={<ReceipeItem />}></Route>
           <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
       </div>
