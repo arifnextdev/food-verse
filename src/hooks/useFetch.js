@@ -23,7 +23,7 @@ export const useFetch = (id) => {
       }
     };
     getRecipeItemData();
-  }, []);
+  }, [id]);
 
   return { data, loading, error };
 };
