@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const ReceipeItem = ({ favouriteHandler, savedItems }) => {
   const [itemSavedStatus, setItemSavedStatus] = useState(null);
   const { id } = useParams();
-  const { data: recipe, loading, error } = useFetch(id);
+  const { data: recipe } = useFetch(id);
 
   const durationCalc = (duration) => {
     if (!duration) return;
