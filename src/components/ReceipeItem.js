@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
-import { useEffect, useState } from "react";
+import { data } from "autoprefixer";
 
 const ReceipeItem = ({ favouriteHandler, savedItems }) => {
   const [itemSavedStatus, setItemSavedStatus] = useState(null);
@@ -19,7 +20,7 @@ const ReceipeItem = ({ favouriteHandler, savedItems }) => {
   };
 
   useEffect(() => {
-    if (!recipe) return;
+    if (!recipe) return null;
 
     setItemSavedStatus(savedItems.some((item) => item.id === recipe.id));
   }, [recipe]);
